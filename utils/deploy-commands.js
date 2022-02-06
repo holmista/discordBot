@@ -1,15 +1,13 @@
-require("dotenv").config();
+require("dotenv").config({ path: "./.env" });
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 
-const coins = ["bitcoin", "ethereum", "cardano"];
-
-const commands = coins.map((coin) =>
+const commands = [
   new SlashCommandBuilder()
-    .setName(coin)
-    .setDescription(`Replies with ${coin} price!`)
-);
+    .setName("help")
+    .setDescription(`Replies with how to interact with bot`),
+];
 
 const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
 

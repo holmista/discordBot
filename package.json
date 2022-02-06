@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "deploy": "node deploy-commands.js"
+    "deploy": "node utils/deploy-commands.js",
+    "start": "npm run deploy && nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +18,13 @@
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
     "eslint": "^8.8.0"
+  },
+  "engines": {
+    "node": "16.13.2"
   }
 }
