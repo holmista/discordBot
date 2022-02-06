@@ -2,6 +2,7 @@ require("dotenv").config();
 const getPrice = require("./utils/getPrice");
 const { Client, Intents } = require("discord.js");
 const pool = require("./connection");
+
 pool
   .connect()
   .then(() => console.log("connected to the database"))
