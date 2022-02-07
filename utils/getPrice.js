@@ -10,9 +10,11 @@ const getPrice = async (pool, coinSymbol) => {
     const res = await axios.get(
       `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`
     );
+    console.log(res)
     console.log(`price gotten ${res.data[coinId].usd.toString()}`)
     return res.data[coinId].usd.toString();
   } catch (e) {
+    console.log(e)
     if (e.message === "database error") throw new Error("database error");
     else throw new Error("api error");
   }

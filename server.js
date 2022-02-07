@@ -36,10 +36,12 @@ dclient.on("messageCreate", async (message) => {
     if (content[0] === "!" && content.length > 3) {
       const symbol = content.substring(1);
       const price = await getPrice(pool, symbol);
+      console.log(`message ${price}`)
       if (price) await message.reply(price);
       else await message.reply("there is no such coin");
     }
   } catch (e) {
+    console.log(e)
     if (e.message === "database error") await message.reply(e.message);
     else if (e.message === "api error") await message.reply(e.message);
     else await message.reply("an unknown error occured");
