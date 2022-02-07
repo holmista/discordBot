@@ -32,6 +32,7 @@ dclient.on("interactionCreate", async (interaction) => {
 
 dclient.on("messageCreate", async (message) => {
   const { content } = message;
+  console.log(content)
   try {
     if (content[0] === "!" && content.length > 3) {
       const symbol = content.substring(1);
